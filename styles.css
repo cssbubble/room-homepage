@@ -1,0 +1,23 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none; 
+}
+:root{
+    --darkGray: hsl(0, 0%, 63%);
+    --black: hsl(0, 0%, 0%);
+    --white: hsl(0, 0%, 100%);
+    --veryDarkGray: hsl(0, 0%, 27%);
+}
+body {
+    height: 100%;
+    font-family: 'Spartan', sans-serif;
+    font-size: 12px;
+}
+.active{
+    display: block;
+}
+
+
+

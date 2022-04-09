@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Room homepage</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.9.5/dist/cdn.min.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="md:max-h-screen">
+  <header
+    x-data="{isOpen: false}" 
+    class="w-full max-w-7xl mx-auto relative md:text-white md:font-bold">
+    
+    <div class="relative z-10 px-5 py-10 flex inline">
+      <nav  
+        class="flex justify-between items-center ">
+        <div class="md:hidden">
+          <button @click="isOpen = !isOpen" class="p-2"> 
+            <div x-show="!isOpen" class="w-5 h-5">
+              <img src="images/icon-hamburger.svg" alt="mobile menu button" >
+            </div>
+            <div x-show="isOpen" @click.outside="isOpen = false" class="w-5 h-5 text-gray-600 z-10 relative">
+              <img src="images/icon-close.svg" alt="mobile menu button" >
+            </div>
+          </button>
+        </div>
+        
+        <!-- mobile menu div  -->
+        <div
+          x-show="isOpen" 
+          class="bg-white text-black absolute inset-x-0 top-0 h-28 flex justify-end items-center">
+          <div class="flex justify-center items-center ml-20">
+            <a href="#" class="py-2 px-3">home</a>
+            <a href="#" class="py-2 px-3">shop</a>
+            <a href="#" class="py-2 px-3">about</a>
+            <a href="#" class="py-2 px-3">contact</a>
+          </div>
+        </div>
+        <a href="#" class="">
+          <img src="images/logo.svg" alt="logo">
+        </a>
+        <div class="hidden md:block">
+          <div class="flex justify-center items-center ml-20">
+            <a href="#" class="py-2 px-3">home</a>
+            <a href="#" class="py-2 px-3">shop</a>
+            <a href="#" class="py-2 px-3">about</a>
+            <a href="#" class="py-2 px-3">contact</a>
+          </div>
+        </div>
+        <div></div>
+      </nav>
+    </div>
+     
+  </header>
+  <main>
+    <div class="md:grid md:grid-cols-3">
+      <div class="relative top-0 -mt-32 md:col-span-2">
+        <!-- mobile hero images  -->
+        <div class="flex md:hidden">
+          <img id="1" class="image block" src="/images/mobile-image-hero-1.jpg" alt="furniture image one">
+          <img id="2" class="image hidden" src="/images/mobile-image-hero-2.jpg" alt="furniture image two">
+          <img id="3" class="image hidden" src="/images/mobile-image-hero-3.jpg" alt="furniture image three">
+        </div>
+        
+        <!-- desktop hero images  -->
+        <div class="flex hidden md:block">
+          <img id="1" class="image block" src="/images/desktop-image-hero-1.jpg" alt="furniture image one">
+          <img id="2" class="image hidden" src="/images/desktop-image-hero-2.jpg" alt="furniture image two">
+          <img id="3" class="image hidden" src="/images/desktop-image-hero-3.jpg" alt="furniture image three">
+        </div>
+
+        <div class=" absolute bottom-0 right-0 bg-black h-12 w-24 px-1 flex justify-center items-center gap-8">
+          <button class="p-2 cursor-pointer left" >
+            <img src="images/icon-angle-left.svg" alt="left arrow">
+          </button>
+          <button class="p-2 cursor-pointer right" >
+            <img src="images/icon-angle-right.svg" alt="right arrow">
+          </button>
+        </div>
+      </div> 
+      <div class="flex md:col-span-1">
+        <section class="section py-12 px-6 block">
+          <h1 class="text-3xl text-gray-900 font-semibold">Discover innovative ways to decorate</h1>
+          <p class="text-gray-400 mt-2 text-xs leading-5">
+            We provide unmatched quality, comfort, and style for property owners across the country. 
+      Our experts combine form and function in bringing your vision to life. Create a room in your 
+      own style with our collection and make your property a reflection of you and what you love.
+          </p>
+          <div class="mt-10 flex justify-start items-center">
+            <a href="#" class="text-sm tracking-[.75em] text-gray-800 uppercase">Shop now</a>
+            <img src="/images/icon-arrow.svg" alt="arrow" class="ml-10">
+          </div>
+        </section>
+    
+        <section class="section py-12 px-6 hidden">
+          <h1 class="text-3xl text-gray-900 font-semibold">We are available all across the globe</h1>
+          <p class="text-gray-400 mt-2 text-xs leading-5">
+            With stores all over the world, it's easy for you to find furniture for your home or place of business. 
+            Locally, we’re in most major cities throughout the country. Find the branch nearest you using our 
+            store locator. Any questions? Don't hesitate to contact us today.
+          </p>
+          <div class="mt-10 flex justify-start items-center">
+            <a href="#" class="text-sm tracking-[.75em] text-gray-800 uppercase">Shop now</a>
+            <img src="/images/icon-arrow.svg" alt="arrow" class="ml-10">
+          </div>
+        </section>
+    
+        <section class="section py-12 px-6 hidden">
+          <h1 class="text-3xl text-gray-900 font-semibold">Manufactured with the best materials</h1>
+          <p class="text-gray-400 mt-2 text-xs leading-5">
+            Our modern furniture store provide a high level of quality. Our company has invested in advanced technology 
+            to ensure that every product is made as perfect and as consistent as possible. With three decades of 
+            experience in this industry, we understand what customers want for their home and office.
+          </p>
+          <div class="mt-10 flex justify-start items-center">
+            <a href="#" class="text-sm tracking-[.75em] text-gray-800 uppercase">Shop now</a>
+            <img src="/images/icon-arrow.svg" alt="arrow" class="ml-10">
+          </div>
+        </section>
+      </div>
+    </div>
+    
+    <section class="grid grid-cols-1 md:grid-cols-7">
+      <div class="md:col-span-2">
+        <img src="/images/image-about-dark.jpg" alt="dark background furniture image">
+      </div>
+      <div class="py-12 px-6 md:col-span-3">
+        <h2 class="text-sm uppercase font-bold text-gray-800 tracking-[.25em]">About our furniture</h2>
+        <p class="text-xs mt-3 text-gray-400 leading-5">
+            Our multifunctional collection blends design and function to suit your individual taste.
+            Make each room unique, or pick a cohesive theme that best express your interests and what
+            inspires you. Find the furniture pieces you need, from traditional to contemporary styles
+            or anything in between. Product specialists are available to help you create your dream space.
+        </p>
+      </div> 
+      <div class="md:col-span-2">
+        <img src="/images/image-about-light.jpg" alt="light image">
+      </div> 
+    </section>
+  </main> 
+  <script src="main.js"></script>
+</body>
+</html>

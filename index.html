@@ -16,15 +16,15 @@
 
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="md:max-h-screen">
+<body class="lg:min-h-screen">
   <header
     x-data="{isOpen: false}" 
-    class="w-full max-w-7xl mx-auto relative md:text-white md:font-bold">
+    class="w-full max-w-sm lg:max-w-7xl mx-auto relative lg:text-white lg:font-bold">
     
-    <div class="relative z-10 px-5 py-10 flex inline">
+    <div class="relative z-10 px-5 py-10">
       <nav  
-        class="flex justify-between items-center ">
-        <div class="md:hidden">
+        class="flex justify-between items-center lg:justify-start">
+        <div class="lg:hidden">
           <button @click="isOpen = !isOpen" class="p-2"> 
             <div x-show="!isOpen" class="w-5 h-5">
               <img src="images/icon-hamburger.svg" alt="mobile menu button" >
@@ -46,15 +46,16 @@
             <a href="#" class="py-2 px-3">contact</a>
           </div>
         </div>
+        <!-- desktop navigation  -->
         <a href="#" class="">
           <img src="images/logo.svg" alt="logo">
         </a>
-        <div class="hidden md:block">
+        <div class="hidden lg:block">
           <div class="flex justify-center items-center ml-20">
-            <a href="#" class="py-2 px-3">home</a>
-            <a href="#" class="py-2 px-3">shop</a>
-            <a href="#" class="py-2 px-3">about</a>
-            <a href="#" class="py-2 px-3">contact</a>
+            <a href="#" class="py-2 px-3 hover:underline hover:underline-offset-8">home</a>
+            <a href="#" class="py-2 px-3 hover:underline hover:underline-offset-8">shop</a>
+            <a href="#" class="py-2 px-3 hover:underline hover:underline-offset-8">about</a>
+            <a href="#" class="py-2 px-3 hover:underline hover:underline-offset-8">contact</a>
           </div>
         </div>
         <div></div>
@@ -62,33 +63,33 @@
     </div>
      
   </header>
-  <main>
-    <div class="md:grid md:grid-cols-3">
-      <div class="relative top-0 -mt-32 md:col-span-2">
+  <main class="w-full max-w-sm lg:max-w-7xl mx-auto">
+    <div class="lg:grid lg:grid-cols-3 p-2 lg:p-0">
+      <div class="relative top-0 -mt-32 lg:col-span-2">
         <!-- mobile hero images  -->
-        <div class="flex md:hidden">
+        <div class="flex lg:hidden block img-div">
           <img id="1" class="image block" src="/images/mobile-image-hero-1.jpg" alt="furniture image one">
           <img id="2" class="image hidden" src="/images/mobile-image-hero-2.jpg" alt="furniture image two">
           <img id="3" class="image hidden" src="/images/mobile-image-hero-3.jpg" alt="furniture image three">
         </div>
         
         <!-- desktop hero images  -->
-        <div class="flex hidden md:block">
-          <img id="1" class="image block" src="/images/desktop-image-hero-1.jpg" alt="furniture image one">
-          <img id="2" class="image hidden" src="/images/desktop-image-hero-2.jpg" alt="furniture image two">
-          <img id="3" class="image hidden" src="/images/desktop-image-hero-3.jpg" alt="furniture image three">
+        <div class="flex hidden lg:block img-div">
+          <img id="4" class="image block" src="/images/desktop-image-hero-1.jpg" alt="furniture image one">
+          <img id="5" class="image hidden" src="/images/desktop-image-hero-2.jpg" alt="furniture image two">
+          <img id="6" class="image hidden" src="/images/desktop-image-hero-3.jpg" alt="furniture image three">
         </div>
 
-        <div class=" absolute bottom-0 right-0 bg-black h-12 w-24 px-1 flex justify-center items-center gap-8">
-          <button class="p-2 cursor-pointer left" >
+        <div class=" absolute bottom-0 right-0 lg:-right-24 bg-black grid place-items-center grid-cols-2">
+          <button class="px-5 py-4 cursor-pointer left hover:bg-gray-800" >
             <img src="images/icon-angle-left.svg" alt="left arrow">
           </button>
-          <button class="p-2 cursor-pointer right" >
+          <button class="px-5 py-4 cursor-pointer right hover:bg-gray-800" >
             <img src="images/icon-angle-right.svg" alt="right arrow">
           </button>
         </div>
       </div> 
-      <div class="flex md:col-span-1">
+      <div class="flex lg:col-span-1 lg:-mt-16">
         <section class="section py-12 px-6 block">
           <h1 class="text-3xl text-gray-900 font-semibold">Discover innovative ways to decorate</h1>
           <p class="text-gray-400 mt-2 text-xs leading-5">
@@ -130,11 +131,11 @@
       </div>
     </div>
     
-    <section class="grid grid-cols-1 md:grid-cols-7">
-      <div class="md:col-span-2">
+    <section class="grid grid-cols-1 lg:grid-cols-7 lg:pt-0">
+      <div class="lg:col-span-2 lg:flex">
         <img src="/images/image-about-dark.jpg" alt="dark background furniture image">
       </div>
-      <div class="py-12 px-6 md:col-span-3">
+      <div class="py-12 px-6 lg:col-span-3">
         <h2 class="text-sm uppercase font-bold text-gray-800 tracking-[.25em]">About our furniture</h2>
         <p class="text-xs mt-3 text-gray-400 leading-5">
             Our multifunctional collection blends design and function to suit your individual taste.
@@ -143,7 +144,7 @@
             or anything in between. Product specialists are available to help you create your dream space.
         </p>
       </div> 
-      <div class="md:col-span-2">
+      <div class="lg:col-span-2 lg:flex">
         <img src="/images/image-about-light.jpg" alt="light image">
       </div> 
     </section>
